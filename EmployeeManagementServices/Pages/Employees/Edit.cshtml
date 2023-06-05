@@ -1,0 +1,95 @@
+﻿@page
+@model EmployeeManagementServices.Pages.Employees.EditModel
+@{
+}
+
+<br />
+<h2>Edit Employee</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+}
+
+<form method="POST">
+	<input type="hidden" name="id" value="@Model.employeeInfo.id" />
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">First Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="first_name" value="@Model.employeeInfo.first_name" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Last Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="last_name" value="@Model.employeeInfo.last_name" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Email</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="email" value="@Model.employeeInfo.email" />
+		</div>
+	</div>
+
+	<br />
+	<h4>Employee Address</h4>
+	<br />
+
+	<input type="hidden" name="address_id" value="@Model.addressInfo.id" />
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Street</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="street" value="@Model.addressInfo.street" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">City</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="city" value="@Model.addressInfo.city" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">State</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="state" value="@Model.addressInfo.state" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Zip Code</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="zip_code" value="@Model.addressInfo.zip_code" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Country</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="country" value="@Model.addressInfo.country" />
+		</div>
+	</div>
+
+
+	@if (Model.successMessage.Length > 0)
+	{
+		<div class="row mb-3">
+			<div class="col-sm-9">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<strong>@Model.successMessage</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+		</div>
+	}
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+	</div>
+</form>
