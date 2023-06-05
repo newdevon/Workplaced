@@ -1,8 +1,6 @@
 using EmployeeManagementServices.Pages.Addresses;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
-using System.Net.Security;
 
 namespace EmployeeManagementServices.Pages.Employees
 {
